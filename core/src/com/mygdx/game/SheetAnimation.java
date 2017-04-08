@@ -15,7 +15,7 @@ import com.badlogic.gdx.utils.TimeUtils;
  * This class implements basic spritesheet animation
  * <p>
  * TODO: move into library. this seems reusable
- * 
+ *
  */
 public class SheetAnimation implements Disposable {
     private final int _frameCols, _frameRows;
@@ -56,6 +56,7 @@ public class SheetAnimation implements Disposable {
         TextureRegion[][] tmp = TextureRegion.split(sheet,
                 sheet.getWidth() / cols, sheet.getHeight() / rows);
         TextureRegion[] frames = new TextureRegion[rows * cols];
+        //transform framegrid to frame sequence
         int index = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
