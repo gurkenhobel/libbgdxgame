@@ -10,5 +10,9 @@ public class Renderer {
 
     }
 
+    public void dispose(){
+
+    }
+
 
 }

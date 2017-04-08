@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.components.PositionComponent;
 import com.mygdx.game.components.SizeComponent;
 import com.mygdx.game.components.renderer.RenderComponent;
-import com.mygdx.game.components.renderer.SheetAnimationRenderer;
 
 import java.util.Comparator;
 
