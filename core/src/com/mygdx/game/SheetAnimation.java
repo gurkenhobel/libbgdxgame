@@ -97,6 +97,15 @@ public class SheetAnimation implements Disposable {
         batch.draw(frame, _position.X, _position.Y);
     }
 
+    public void sampleAndDraw(SpriteBatch batch, float width, float height){
+        if(_startTimestamp == -1){
+            _startTimestamp = TimeUtils.millis();
+        }
+        float sampleTime = (float)(TimeUtils.millis() - _startTimestamp) / 1000;
+        TextureRegion frame = _animation.getKeyFrame(sampleTime, true);
+        batch.draw(frame, _position.X, _position.Y, width, height);
+    }
+
     /**
      * frees resources of the animation.
      */
