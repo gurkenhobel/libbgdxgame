@@ -65,8 +65,8 @@ public class RenderSystem extends SortedIteratingSystem {
         generateClippingScissors();
         _batch.setProjectionMatrix(_camera.combined);
         super.update(deltaTime);
-        _batch.end();
         ScissorStack.popScissors();
+        _batch.end();
     }
 
     @Override
@@ -87,7 +87,7 @@ public class RenderSystem extends SortedIteratingSystem {
         Rectangle scissors = new Rectangle();
         Rectangle clipBounds = new Rectangle(_viewport.getScreenX(),_viewport.getScreenY(),
                 _viewport.getScreenWidth(),_viewport.getScreenHeight());
-        ScissorStack.calculateScissors(_camera, _batch.getTransformMatrix(), clipBounds, scissors);
+        ScissorStack.calculateScissors(_camera, 0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), _batch.getTransformMatrix(), clipBounds, scissors);
         ScissorStack.pushScissors(scissors);
     }
 
