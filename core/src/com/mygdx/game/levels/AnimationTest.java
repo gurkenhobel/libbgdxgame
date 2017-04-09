@@ -27,8 +27,8 @@ public class AnimationTest implements ILevel {
         pos.x = 0;
         pos.y = 0;
         SizeComponent size = engine.createComponent(SizeComponent.class);
-        size.width = 800;
-        size.hight = 480;
+        size.width = 300;
+        size.hight = 300;
 
         anim.add(renderer);
         anim.add(pos);
