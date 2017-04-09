@@ -30,7 +30,11 @@ public class GameEngine {
 
     }
 
-    public void render(){
+    public void update(){
         _engine.update(Gdx.graphics.getDeltaTime());
+    }
+
+    public void resize(int width, int height){
+        _renderSystem.resize(width, height);
     }
 }

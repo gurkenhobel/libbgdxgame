@@ -14,7 +14,6 @@ import com.badlogic.gdx.utils.TimeUtils;
  * <p>
  * This class implements basic spritesheet animation
  * <p>
- * TODO: move into library. this seems reusable
  *
  */
 public class SheetAnimation implements Disposable {

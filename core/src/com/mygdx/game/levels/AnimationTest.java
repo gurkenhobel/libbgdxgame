@@ -24,11 +24,11 @@ public class AnimationTest implements ILevel {
         renderer.renderer = new SheetAnimationRenderer("spritesheet.png",4, 4, 25);
         renderer.z = 0;
         PositionComponent pos = engine.createComponent(PositionComponent.class);
-        pos.x = 0;
-        pos.y = 0;
+        pos.x = 250;
+        pos.y = 90;
         SizeComponent size = engine.createComponent(SizeComponent.class);
         size.width = 300;
-        size.hight = 300;
+        size.height = 300;
 
         anim.add(renderer);
         anim.add(pos);
