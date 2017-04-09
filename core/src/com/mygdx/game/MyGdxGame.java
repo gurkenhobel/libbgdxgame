@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.levels.AnimationTest;
 import com.mygdx.game.levels.ILevel;
+import com.mygdx.game.levels.StaticTest;
 
 
 /**
@@ -31,7 +32,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
         _engine = new GameEngine(_batch);
 
-        ILevel level = new AnimationTest();
+        ILevel level = new StaticTest();
 
         _engine.initialize(level);
 

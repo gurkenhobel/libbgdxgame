@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.TimeUtils;
 /**
  * Created by nils on 08.04.17.
  */
-public class SheetAnimationRenderer extends Renderer implements Disposable {
+public class SheetAnimationRenderer extends Renderer{
 
     private final int _frameCols, _frameRows;
     private float _frameInterval;
