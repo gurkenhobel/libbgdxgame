@@ -1,21 +1,9 @@
 package com.mygdx.game;
 
-import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.Scaling;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.ScalingViewport;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.levels.AnimationTest;
+import com.mygdx.game.levels.RenderTest;
 import com.mygdx.game.levels.ILevel;
-import com.mygdx.game.levels.StaticTest;
 
 
 /**
@@ -32,7 +20,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
         _engine = new GameEngine(_batch);
 
-        ILevel level = new StaticTest();
+        ILevel level = new RenderTest();
 
         _engine.initialize(level);
 

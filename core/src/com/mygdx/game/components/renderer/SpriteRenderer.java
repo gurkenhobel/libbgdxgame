@@ -20,11 +20,11 @@ public class SpriteRenderer extends Renderer{
     }
 
     @Override
-    public void render(SpriteBatch batch, float posX, float posY, float width, float height){
-        _sprite.setPosition(posX, posY);
-        _sprite.setSize(width, height);
-        _sprite.draw(batch);
+    public Sprite sampleSprite() {
+        return _sprite;
     }
+
+
 
     @Override
     public void dispose() {

@@ -3,6 +3,7 @@ package com.mygdx.game.components.renderer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
@@ -19,6 +20,8 @@ public class SheetAnimationRenderer extends Renderer{
     private Animation<TextureRegion> _animation;
     private Texture _sheet;
     private long _startTimestamp;
+
+
 
     /**
      * @param sheetPath path to the image of the spritesheet. the texture needs to be instantiated
@@ -41,13 +44,13 @@ public class SheetAnimationRenderer extends Renderer{
 
 
     @Override
-    public void render(SpriteBatch batch, float posX, float posY, float width, float height){
+    public Sprite sampleSprite() {
         if(_startTimestamp == -1){
             _startTimestamp = TimeUtils.millis();
         }
         float sampleTime = (float)(TimeUtils.millis() - _startTimestamp) / 1000;
         TextureRegion frame = _animation.getKeyFrame(sampleTime, true);
-        batch.draw(frame, posX, posY, width, height);
+        return new Sprite(frame);
     }
 
 

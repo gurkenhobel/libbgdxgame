@@ -8,8 +8,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.utils.ScissorStack;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
@@ -75,7 +77,14 @@ public class RenderSystem extends SortedIteratingSystem {
         PositionComponent position = _pm.get(entity);
         SizeComponent size = _sm.get(entity);
 
-        renderer.renderer.render(_batch, position.x, position.y, size.width, size.height);
+        Sprite sample = renderer.renderer.sampleSprite();
+        render(_batch, position.pos, size.size, sample);
+    }
+
+    private void render(SpriteBatch batch, Vector2 pos, Size size, Sprite sprite){
+        sprite.setPosition(pos.x, pos.y);
+        sprite.setSize(size.width, size.height);
+        sprite.draw(batch);
     }
 
     public void resize(int width, int height) {
