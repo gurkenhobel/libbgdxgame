@@ -7,13 +7,7 @@ import com.badlogic.gdx.utils.Disposable;
 /**
  * Created by nils on 08.04.17.
  */
-public abstract class Renderer implements Disposable {
+public abstract class Renderer {
 
     public abstract Sprite sampleSprite();
-
-
-
-    public abstract void dispose();
-
-
 }

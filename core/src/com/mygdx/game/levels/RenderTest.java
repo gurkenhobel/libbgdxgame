@@ -3,6 +3,7 @@ package com.mygdx.game.levels;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.ResourceManager;
 import com.mygdx.game.components.PositionComponent;
 import com.mygdx.game.components.SizeComponent;
 import com.mygdx.game.components.renderer.RenderComponent;
@@ -31,7 +32,7 @@ public class RenderTest implements ILevel {
     private Entity createAnim(PooledEngine engine){
         Entity anim = engine.createEntity();
         RenderComponent renderer  = engine.createComponent(RenderComponent.class);
-        renderer.renderer = new SheetAnimationRenderer("spritesheet.png",4, 4, 25);
+        renderer.renderer = new SheetAnimationRenderer(ResourceManager.getInstance().loadTexture("spritesheet.png"),4, 4, 25);
         renderer.z = 0;
         PositionComponent pos = engine.createComponent(PositionComponent.class);
         pos.pos = new Vector2(500, 90);
@@ -48,7 +49,7 @@ public class RenderTest implements ILevel {
     private Entity createSprite(PooledEngine engine){
         Entity sprite = engine.createEntity();
         RenderComponent renderer  = engine.createComponent(RenderComponent.class);
-        renderer.renderer = new SpriteRenderer("spritesheet.png");
+        renderer.renderer = new SpriteRenderer(ResourceManager.getInstance().loadTexture("spritesheet.png"));
         renderer.z = 0;
         PositionComponent pos = engine.createComponent(PositionComponent.class);
         pos.pos = new Vector2(0, 90);

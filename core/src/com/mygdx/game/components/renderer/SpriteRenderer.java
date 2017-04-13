@@ -12,11 +12,9 @@ import com.badlogic.gdx.utils.Disposable;
 public class SpriteRenderer extends Renderer{
 
     private Sprite _sprite;
-    private Texture _texture;
 
-    public SpriteRenderer(String texturePath){
-        _texture = new Texture(texturePath);
-        _sprite = new Sprite(_texture);
+    public SpriteRenderer(Texture texture){
+        _sprite = new Sprite(texture);
     }
 
     @Override
@@ -24,10 +22,4 @@ public class SpriteRenderer extends Renderer{
         return _sprite;
     }
 
-
-
-    @Override
-    public void dispose() {
-        _texture.dispose();
-    }
 }

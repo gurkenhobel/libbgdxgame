@@ -13,7 +13,7 @@ public class RenderComponent implements Component, Pool.Poolable {
 
     @Override
     public void reset() {
-        renderer.dispose();
+        //TODO: recycle Renderers
         renderer = null;
         z = 0;
     }

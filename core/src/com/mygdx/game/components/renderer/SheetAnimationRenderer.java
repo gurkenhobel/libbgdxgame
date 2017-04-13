@@ -24,17 +24,16 @@ public class SheetAnimationRenderer extends Renderer{
 
 
     /**
-     * @param sheetPath path to the image of the spritesheet. the texture needs to be instantiated
-     *                  here or else dispose might create bad references
+     * @param texture   needs to be loaded with ResourceManager
      * @param cols      column count of the spritesheet
      * @param rows      row count of the spritesheet
      * @param fps       speed of the animation
      */
-    public SheetAnimationRenderer(String sheetPath, int cols, int rows, int fps) {
+    public SheetAnimationRenderer(Texture texture, int cols, int rows, int fps) {
         _frameCols = cols;
         _frameRows = rows;
         _frameInterval = 1.0f / fps;
-        _sheet = new Texture(Gdx.files.internal(sheetPath));
+        _sheet = texture;
 
         _startTimestamp = -1;
 
@@ -80,10 +79,5 @@ public class SheetAnimationRenderer extends Renderer{
             }
         }
         return frames;
-    }
-
-    @Override
-    public void dispose() {
-        _sheet.dispose();
     }
 }
