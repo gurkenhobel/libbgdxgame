@@ -11,6 +11,10 @@ import com.badlogic.gdx.utils.TimeUtils;
 
 /**
  * Created by nils on 08.04.17.
+ *
+ * this renderer can render sheet animations
+ * (infos about sheet anim)
+ * https://gamedevelopment.tutsplus.com/tutorials/an-introduction-to-spritesheet-animation--gamedev-13099
  */
 public class SheetAnimationRenderer extends Renderer{
 
@@ -24,7 +28,8 @@ public class SheetAnimationRenderer extends Renderer{
 
 
     /**
-     * @param texture   needs to be loaded with ResourceManager
+     * @param texture   needs to be loaded with ResourceManager. this is the spritesheet which
+     *                  contains the animation
      * @param cols      column count of the spritesheet
      * @param rows      row count of the spritesheet
      * @param fps       speed of the animation
@@ -42,6 +47,11 @@ public class SheetAnimationRenderer extends Renderer{
     }
 
 
+    //controlling the entity state from a component is dirty. we need some means to control the
+    //sampletime from the systems. i think we should introduce a AnimationComponent
+    //TODO: create Component which contains time state
+    //this might conflict with physics which need a time state as well. we might have to create a
+    //component which both systems can consume
     @Override
     public Sprite sampleSprite() {
         if(_startTimestamp == -1){

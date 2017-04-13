@@ -7,15 +7,18 @@ import com.badlogic.gdx.utils.Disposable;
 
 /**
  * Created by nils on 09.04.17.
- * TODO: move texture loading to dedicated component. this will improve performance and prevent memory leaks
+ * renders a simple static sprite
  */
 public class SpriteRenderer extends Renderer{
 
     private Sprite _sprite;
 
+    //creates a sprite which covers the whole texture
     public SpriteRenderer(Texture texture){
         _sprite = new Sprite(texture);
     }
+
+    //TODO: add constructor for creating sprites which only partialy cover the texture
 
     @Override
     public Sprite sampleSprite() {

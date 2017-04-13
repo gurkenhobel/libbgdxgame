@@ -24,6 +24,14 @@ import java.util.Comparator;
 
 /**
  * Created by nils on 08.04.17.
+ *
+ * this is the root of the engines render logic. we must try to perform as much of our rendering here
+ * as possible since additional systems will create performance overhead
+ *
+ * (infos about superclass)
+ * https://github.com/libgdx/ashley/wiki/Built-in-Entity-Systems#sortediteratingsystem
+ *
+ * we need to find a fitting structure for this system or this class will become a MONSTER
  */
 public class RenderSystem extends SortedIteratingSystem {
     private static ComponentMapper<RenderComponent> _rm;
@@ -53,7 +61,6 @@ public class RenderSystem extends SortedIteratingSystem {
 
 
     //doing all the stuff that must happen before actual rendering can start
-    //TODO: move that into seperate system with higher priority
     @Override
     public void update(float deltaTime){
         _camera.update();

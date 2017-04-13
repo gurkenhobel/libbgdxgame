@@ -7,7 +7,6 @@ import com.mygdx.game.levels.ILevel;
 
 
 /**
- * TODO: move camera into engine
  */
 public class MyGdxGame extends ApplicationAdapter {
 

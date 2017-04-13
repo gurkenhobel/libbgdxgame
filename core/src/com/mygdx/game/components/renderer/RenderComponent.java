@@ -9,8 +9,10 @@ import com.badlogic.gdx.utils.Pool;
 public class RenderComponent implements Component, Pool.Poolable {
     //holds all data specific to render the entity
     public Renderer renderer;
+    //z index of the entity. defines its layering behavior during render
     public int z;
 
+    //resets the component to a reusable state
     @Override
     public void reset() {
         //TODO: recycle Renderers
