@@ -3,17 +3,13 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
     private GameEngine _game;
-    private OrthographicCamera _camera;
 
     @Override
     public void create() {
-        _camera = new OrthographicCamera();
-        _game = new GameEngine(_camera);
+        _game = new GameEngine();
         _game.loadLevel("test-map.tmx");
     }
 
