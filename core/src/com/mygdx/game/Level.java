@@ -23,7 +23,9 @@ public class Level implements Disposable {
     public Level(String mapPath) {
         _map = new TmxMapLoader().load(mapPath);    //TODO: integrate RessourceManger
         _renderer = new OrthogonalTiledMapRenderer(_map, 1);
-        _camera = camera;
+        //TODO: load camera from tmx
+        TmxInflater inflater = new TmxInflater(_map);
+        _camera = inflater.getCamera();
     }
 
 
